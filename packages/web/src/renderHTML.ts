@@ -59,6 +59,7 @@ export default function renderHTML(config, manifest, manifestFiles, req, res) {
   let webPage;
 
   try {
+  // When the domain name is switched from localhost to 127.0.0.1, the 'base' in the html will not be re-rendered because the html is cached.
     webPage = cache.get('template');
 
     if (!webPage) {
